@@ -65,6 +65,6 @@ for result in results.data:
     if result.author_id not in follow_block_list:
         client.follow_user(result.author_id)
         print(result.author_id)
-        time.sleep(30)
+        time.sleep(61)
         
 
