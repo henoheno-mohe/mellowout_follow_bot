@@ -27,9 +27,9 @@ client = tweepy.Client(BT, CK, CS, AT, AS)
 #２）あるキーワードで検索したユーザを指定の件数フォローする
 
 # 検索キーワード
-keyword = "#相互フォロー  -is:retweet　-is:reply"
-keyword2 = "#裏垢男子と繋がりたい  -is:retweet　-is:reply"
-keyword3 = "#裏垢女子と繋がりたい  -is:retweet　-is:reply"
+keyword = "#相互フォロー -is:retweet"
+keyword2 = "#裏垢男子と繋がりたい -is:retweet"
+keyword3 = "#裏垢女子と繋がりたい  -is:retweet"
 
 # フォロー数
 follow_cnt = 0
