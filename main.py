@@ -27,13 +27,15 @@ client = tweepy.Client(BT, CK, CS, AT, AS)
 #２）あるキーワードで検索したユーザを指定の件数フォローする
 
 # 検索キーワード
-keyword = "#相互フォロー  -is:retweet"
+keyword = "#相互フォロー  -is:retweet　-is:reply"
+keyword2 = "#裏垢男子と繋がりたい  -is:retweet　-is:reply"
+keyword3 = "#裏垢女子と繋がりたい  -is:retweet　-is:reply"
 
 # フォロー数
 follow_cnt = 0
 
 # 現在のフォローリストを作成
-follow_list = client.get_users_following(id="1475721163594952706",max_results=100)
+follow_list = client.get_users_following(id="1475721163594952706",max_results=200)
 follow_lists = []
 
 for follow in follow_list[0]:
@@ -52,7 +54,7 @@ print(block_lists)
 
 follow_block_list = follow_lists + block_lists
 
-s_count = 50
+s_count = 30
 results = client.search_recent_tweets(query=keyword, max_results=s_count, user_fields = "name", expansions=["author_id","referenced_tweets.id"],)
 
 for result in results.data: 
@@ -65,6 +67,26 @@ for result in results.data:
     if result.author_id not in follow_block_list:
         client.follow_user(result.author_id)
         print(result.author_id)
-        time.sleep(61)
+        time.sleep(60)
         
+s_count2 = 30
+results2 = client.search_recent_tweets(query=keyword2, max_results=s_count2, user_fields = "name", expansions=["author_id","referenced_tweets.id"],)
 
+
+for result2 in results2.data: 
+    client.like(tweet_id=result2.id)
+    if result2.author_id not in follow_block_list:
+        client.follow_user(result2.author_id)
+        print(result2.author_id)
+        time.sleep(60)
+        
+s_count3 = 30
+results3 = client.search_recent_tweets(query=keyword3, max_results=s_count3, user_fields = "name", expansions=["author_id","referenced_tweets.id"],)
+
+
+for result3 in results3.data: 
+    client.like(tweet_id=result3.id)
+    if result3.author_id not in follow_block_list:
+        client.follow_user(result3.author_id)
+        print(result3.author_id)
+        time.sleep(60)
