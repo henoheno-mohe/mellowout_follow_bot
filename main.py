@@ -54,7 +54,7 @@ print(block_lists)
 
 follow_block_list = follow_lists + block_lists
 
-s_count = 30
+s_count = 20
 results = client.search_recent_tweets(query=keyword, max_results=s_count, user_fields = "name", expansions=["author_id","referenced_tweets.id"],)
 
 for result in results.data: 
@@ -69,7 +69,7 @@ for result in results.data:
         print(result.author_id)
         time.sleep(60)
         
-s_count2 = 30
+s_count2 = 20
 results2 = client.search_recent_tweets(query=keyword2, max_results=s_count2, user_fields = "name", expansions=["author_id","referenced_tweets.id"],)
 
 
@@ -80,7 +80,7 @@ for result2 in results2.data:
         print(result2.author_id)
         time.sleep(60)
         
-s_count3 = 30
+s_count3 = 20
 results3 = client.search_recent_tweets(query=keyword3, max_results=s_count3, user_fields = "name", expansions=["author_id","referenced_tweets.id"],)
 
 
