@@ -89,4 +89,4 @@ for result3 in results3.data:
     if result3.author_id not in follow_block_list:
         client.follow_user(result3.author_id)
         print(result3.author_id)
-        time.sleep(60)
+        time.sleep(61)
